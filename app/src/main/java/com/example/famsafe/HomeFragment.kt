@@ -9,8 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class HomeFragment : Fragment() {
+    private val listOfContacts:ArrayList<ContactModel> =ArrayList()
     private lateinit var rootView:View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +66,17 @@ class HomeFragment : Fragment() {
         recycler.layoutManager=LinearLayoutManager(requireContext())
         recycler.adapter=adapter
 
-        val inviteAdapter=InviteAdapter(fetchContacts())
+        val inviteAdapter=InviteAdapter(listOfContacts)
+
+        CoroutineScope(Dispatchers.IO).launch {
+            listOfContacts.addAll(fetchContacts())
+            withContext(Dispatchers.Main)
+            {
+                inviteAdapter.notifyDataSetChanged()
+            }
+        }
+
+
         val inviteRecycler=requireView().findViewById<RecyclerView>(R.id.recycler_invite)
         inviteRecycler.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
         inviteRecycler.adapter=inviteAdapter
