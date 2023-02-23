@@ -1,6 +1,5 @@
 package com.example.famsafe
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.provider.ContactsContract
 import androidx.fragment.app.Fragment
@@ -15,6 +14,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class HomeFragment : Fragment() {
+    lateinit var inviteAdapter:InviteAdapter
     private val listOfContacts:ArrayList<ContactModel> =ArrayList()
     private lateinit var rootView:View
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,20 +66,33 @@ class HomeFragment : Fragment() {
         recycler.layoutManager=LinearLayoutManager(requireContext())
         recycler.adapter=adapter
 
-        val inviteAdapter=InviteAdapter(listOfContacts)
+        inviteAdapter=InviteAdapter(listOfContacts)
+        fetchDatabaseContacts()
 
         CoroutineScope(Dispatchers.IO).launch {
-            listOfContacts.addAll(fetchContacts())
-            withContext(Dispatchers.Main)
-            {
-                inviteAdapter.notifyDataSetChanged()
-            }
+            insertAllContacts(fetchContacts())
+
         }
 
 
         val inviteRecycler=requireView().findViewById<RecyclerView>(R.id.recycler_invite)
         inviteRecycler.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
         inviteRecycler.adapter=inviteAdapter
+    }
+
+    private fun fetchDatabaseContacts(){
+        val database=ContactsDB.DataBase(requireContext())
+        database.contactsDao().getAllContacts().observe(viewLifecycleOwner){
+            listOfContacts.clear()
+            listOfContacts.addAll(it)
+            inviteAdapter.notifyDataSetChanged()
+        }
+
+    }
+
+    private suspend fun insertAllContacts(listOfContacts: ArrayList<ContactModel>) {
+        val database=ContactsDB.DataBase(requireContext())
+        database.contactsDao().insertAll(listOfContacts)
     }
 
 

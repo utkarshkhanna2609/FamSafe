@@ -12,11 +12,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
-    val permissions= arrayOf(
+    private val permissions= arrayOf(
         android.Manifest.permission.ACCESS_FINE_LOCATION,
+        android.Manifest.permission.ACCESS_COARSE_LOCATION,
         android.Manifest.permission.READ_CONTACTS
     )
-    val permissionCode=78
+    private val permissionCode=78
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +48,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun askForPermission() {
         ActivityCompat.requestPermissions(this, permissions, permissionCode)
-
     }
 
     private fun inflateMaps() {
