@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "664754189657",
+    "project_id": "famsafe-a49bd",
+    "storage_bucket": "famsafe-a49bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664754189657:android:de98d360b7a861877b4848",
+        "android_client_info": {
+          "package_name": "com.example.famsafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664754189657-jt2gj5gejc8j90u0mc3cj2o51n1hi0jl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.famsafe",
+            "certificate_hash": "f80426a40b9b1360fd17e77201e2101aeb1d2209"
+          }
+        },
+        {
+          "client_id": "664754189657-glaath131etjvaatipoblbs3hq48u87u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr52NkyGG3l9wa-R2Qg7YuGevAO2ZSg9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664754189657-glaath131etjvaatipoblbs3hq48u87u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
