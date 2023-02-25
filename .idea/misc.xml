@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/batt.xml" value="0.1835" />
+        <entry key="app/src/main/res/drawable/button_bg.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/call.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/gps.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/human.xml" value="0.1835" />
@@ -16,6 +17,7 @@
         <entry key="app/src/main/res/drawable/order_dots.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/shape_circle.xml" value="0.1835" />
         <entry key="app/src/main/res/drawable/shape_rounded_rect.xml" value="0.1835" />
+        <entry key="app/src/main/res/drawable/splash_background.xml" value="0.1835" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.3435185185185185" />
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.35104166666666664" />
@@ -24,7 +26,7 @@
         <entry key="app/src/main/res/layout/fragment_guard.xml" value="0.2402694702148438" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.34475199381510413" />
         <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.2421875" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2595382690429688" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.32674407958984375" />
         <entry key="app/src/main/res/layout/item_invite.xml" value="0.35104166666666664" />
         <entry key="app/src/main/res/layout/item_member.xml" value="0.248583475748698" />
         <entry key="app/src/main/res/menu/bottom_bar.xml" value="0.1" />

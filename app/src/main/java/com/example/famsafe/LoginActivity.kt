@@ -17,6 +17,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 class LoginActivity : AppCompatActivity() {
     private val RC_SIGN_IN = 89
     private lateinit var googleSignInClient: GoogleSignInClient
+    public lateinit var name:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -61,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
                     val user = firebaseAuth.currentUser
                     startActivity(Intent(this,MainActivity::class.java))
                     Log.d("Uttu","Firebase Auth with google:${user?.displayName}")
+                    name=user?.displayName.toString()
                 } else {
                     // Sign in failed, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)

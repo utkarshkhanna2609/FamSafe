@@ -14,15 +14,15 @@
             android:layout_marginTop="32dp"
             android:layout_width="88dp"
             android:layout_height="88dp"
-            app:layout_constraintTop_toBottomOf="@+id/welc_text"
-            app:layout_constraintStart_toStartOf="@id/welc_text"
-            app:layout_constraintEnd_toEndOf="@id/welc_text"
+            app:layout_constraintTop_toBottomOf="@+id/hello"
+            app:layout_constraintStart_toStartOf="@id/hello"
+            app:layout_constraintEnd_toEndOf="@id/hello"
             />
         <TextView
-            android:id="@+id/welc_text"
+            android:id="@+id/hello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="WELCOME!"
+            android:text="@string/welc_text"
             android:fontFamily="sans-serif-thin"
             android:textColor="@color/black"
             android:textSize="24sp"
@@ -31,6 +31,7 @@
             app:layout_constraintTop_toTopOf="parent"
             />
         <TextView
+            android:id="@+id/here_to_help"
             android:layout_width="wrap_content"
             android:layout_height="32sp"
             android:text="We will always be here to help!"
@@ -40,6 +41,15 @@
             android:elevation="100dp"
             android:textSize="28sp"
             />
+        <Button
+            android:text="LOG OUT"
+            android:layout_marginTop="64dp"
+            android:backgroundTint="@color/black"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            app:layout_constraintTop_toBottomOf="@+id/here_to_help"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

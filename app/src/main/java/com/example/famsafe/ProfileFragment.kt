@@ -1,6 +1,7 @@
 package com.example.famsafe
 
 import android.content.Context.LOCATION_SERVICE
+import android.content.res.Configuration
 import android.location.LocationManager
 import android.os.Bundle
 import android.telephony.SmsManager
@@ -12,6 +13,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import kotlinx.android.synthetic.main.fragment_profile.*
+import java.util.*
+import kotlin.collections.HashMap
 
 
 class ProfileFragment : Fragment() {
