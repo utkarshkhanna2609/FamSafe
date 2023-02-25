@@ -59,13 +59,15 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
+
+                    SharedPreference.putBoolean("isUSerLoggedIn",true)
                     val user = firebaseAuth.currentUser
                     startActivity(Intent(this,MainActivity::class.java))
                     Log.d("Uttu","Firebase Auth with google:${user?.displayName}")
-                    name=user?.displayName.toString()
+
                 } else {
                     // Sign in failed, display a message to the user.
-                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    Log.w("utk", "signInWithCredential:failure", task.exception)
                     // ...
                 }
             }

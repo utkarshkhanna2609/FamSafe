@@ -8,7 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 class SplashScreen :AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startActivity(Intent(this, LoginActivity::class.java))
-        finish()
+
+        SharedPreference.init(this)
+        val isUSerLoggedIn=SharedPreference.getBoolean("isUSerLoggedIn")
+        if(isUSerLoggedIn){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+        else{
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
     }
 }
